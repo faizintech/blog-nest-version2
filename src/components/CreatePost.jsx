@@ -29,6 +29,9 @@ const CreatePost = ({ posts, setPost }) => {
     } else if (tags.current.value == "") {
       // console.log("tags not given");
       Error("tags has not been given");
+      if (tags.current.value.split(" ").length > 8) {
+        Error("you can not add tags more than 8");
+      }
     }
 
     if (

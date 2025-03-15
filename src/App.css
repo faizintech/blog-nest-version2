@@ -580,16 +580,13 @@ footer .container menu ul a {
   padding: 10px 10px;
   background: var(--off-white);
   color: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.PostCreatedMessage button {
-  margin-top: 10px;
-  border: 1px solid var(--dark-background);
-  border-radius: 5px;
+.PostCreatedMessage span {
   text-align: center;
-  padding: 10px 10px;
-  background: var(--orange-back);
-  color: var(--orange-font-);
   cursor: pointer;
 }
 
