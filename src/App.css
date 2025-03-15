@@ -557,6 +557,22 @@ footer .container menu ul a {
   cursor: pointer;
 }
 
+.ErrorMessage {
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+  background: red;
+  margin-top: 1rem;
+  display: flex;
+  color: black;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.ErrorMessage span {
+  cursor: pointer;
+  text-align: center;
+}
+
 .PostCreatedMessage {
   border: 1px solid var(--dark-background);
   border-radius: 5px;

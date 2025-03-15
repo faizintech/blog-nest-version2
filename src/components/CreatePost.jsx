@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import PostCreatedMessage from "./PostCreatedMessage";
+import ErrorMessage from "./ErrorMessage";
 
 const CreatePost = ({ posts, setPost }) => {
   const [successState, SetSuccessState] = useState(false);
@@ -9,8 +10,26 @@ const CreatePost = ({ posts, setPost }) => {
   const content = useRef("");
   const tags = useRef("");
 
+  // for authentication of the inputs
+  const [error, setError] = useState("");
+
+  const Error = (error) => {
+    setError(error);
+  };
+
   const onHandelClickSubmit = (event, title, content, tags) => {
     event.preventDefault();
+
+    if (title.current.value == "") {
+      // console.log(`title is not mentioneed`);
+      Error("Title is not mentioned");
+    } else if (content.current.value == "") {
+      // console.log(`content has not been created`);
+      Error("content has been created");
+    } else if (tags.current.value == "") {
+      // console.log("tags not given");
+      Error("tags has not been given");
+    }
 
     if (
       title.current.value !== "" &&
@@ -108,6 +127,7 @@ const CreatePost = ({ posts, setPost }) => {
           >
             Posts
           </button>
+          {error != "" && <ErrorMessage error={error} setError={setError} />}
         </form>
       </div>
     </>
