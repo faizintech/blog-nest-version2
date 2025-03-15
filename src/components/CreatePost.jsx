@@ -6,7 +6,6 @@ const CreatePost = ({ posts, setPost }) => {
   const [successState, SetSuccessState] = useState(false);
   // this is for adding a list in dom and local storage
   const title = useRef("");
-  const image = useRef("");
   const content = useRef("");
   const tags = useRef("");
 
@@ -25,19 +24,19 @@ const CreatePost = ({ posts, setPost }) => {
       Error("Title is not mentioned");
     } else if (content.current.value == "") {
       // console.log(`content has not been created`);
-      Error("content has been created");
+      Error("there is no content");
     } else if (tags.current.value == "") {
       // console.log("tags not given");
-      Error("tags has not been given");
-      if (tags.current.value.split(" ").length > 8) {
-        Error("you can not add tags more than 8");
-      }
+      Error("Tags can not be empty");
+    } else if (tags.current.value.split(" ").length > 8) {
+      Error("tags can not be more than eight");
     }
 
     if (
       title.current.value !== "" &&
       content.current.value !== "" &&
-      tags.current.value !== ""
+      tags.current.value !== "" &&
+      tags.current.value.split(" ").length < 9
     ) {
       //verifications of the tags if he the tags array have any false value
       const tagsData = tags.current.value.split(" ");
@@ -54,6 +53,7 @@ const CreatePost = ({ posts, setPost }) => {
 
       setPost([myObj, ...posts]);
       SetSuccessState(true);
+      setError("");
       title.current.value = "";
       content.current.value = "";
       tags.current.value = "";
