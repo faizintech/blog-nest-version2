@@ -104,7 +104,7 @@ const CreatePost = ({ posts, setPost }) => {
               className="form-control"
               id="exampleInputPassword1"
               ref={content}
-              placeholder="What are you thinking today"
+              placeholder="write here"
             />
           </div>
           {/* tags */}
@@ -117,19 +117,20 @@ const CreatePost = ({ posts, setPost }) => {
               className="form-control"
               id="tags"
               ref={tags}
-              placeholder="Enter Tags space in between e.g.,[design tech research]:"
+              placeholder="Enter Tags space in between e.g.,design tech research:"
             />
           </div>
-
-          <button
-            type="submit"
-            className="btn btn-primary"
-            onClick={(event) => {
-              onHandelClickSubmit(event, title, content, tags);
-            }}
-          >
-            Posts
-          </button>
+          <div className="btn">
+            <button
+              type="submit"
+              className="btn btn-primary"
+              onClick={(event) => {
+                onHandelClickSubmit(event, title, content, tags);
+              }}
+            >
+              Posts
+            </button>
+          </div>
           {error != "" && <ErrorMessage error={error} setError={setError} />}
         </form>
       </div>

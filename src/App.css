@@ -544,7 +544,19 @@ footer .container menu ul a {
   box-shadow: 0px 0px 2px var(--primary-font-color);
 }
 
-.btn-primary {
+.create-posts form .btn {
+  margin-top: 1rem;
+}
+.create-posts form .btn button {
+  min-width: 100px;
+  padding: 5px;
+  border-radius: 25px;
+  outline: none;
+  border: 1px solid white;
+  background: black;
+  color: white;
+}
+/* .btn-primary {
   font-size: 18px;
   padding: 5px;
   width: 100%;
@@ -555,7 +567,7 @@ footer .container menu ul a {
   border: 1px solid var(--primary-font-color);
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
 .ErrorMessage {
   justify-content: space-between;
@@ -658,8 +670,14 @@ footer .container menu ul a {
   footer .container {
     border-top: 1px solid var(--light-background);
   }
-  .create-posts {
+  .create-posts,
+  textarea {
     color: var(--light-background);
+  }
+  .create-posts form .btn button {
+    border: 1px solid black;
+    background: white;
+    color: black;
   }
   .mb-3 input {
     background: var(--dark-background);
@@ -684,3 +702,39 @@ footer .container menu ul a {
     }
   }
 }
+
+/* .create-post {
+  width: 100%;
+  margin-top: 1rem;
+}
+.create-post form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+  margin: auto;
+}
+.create-post form input {
+  border: none;
+  font-size: 30px;
+  outline: none;
+  text-decoration: none;
+}
+.create-post form textarea {
+  border: none;
+  font-size: 20px;
+  outline: none;
+  font-family: Inter;
+  font-weight: 400;
+}
+
+.create-post form .btn button {
+  min-width: 100px;
+  padding: 5px;
+  border-radius: 25px;
+  outline: none;
+  border: 1px solid white;
+  background: black;
+  color: white;
+} */
